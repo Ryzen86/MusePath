@@ -113,7 +113,6 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   position: relative;
-  padding-bottom: 30px; /* Offset for educational ticker */
 }
 
 /* All elements using the display font (Bebas Neue) need extra letter spacing to prevent squishing */
@@ -1810,44 +1809,6 @@ div:hover > .play-hover-overlay {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--primary);
-}
-
-/* Educational Marquee Ticker Banner */
-.educational-ticker {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 30px;
-  background: #ffffff;
-  border-top: 1px solid #000000;
-  color: #000000;
-  font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  z-index: 999999;
-  pointer-events: none;
-}
-
-.ticker-text {
-  display: inline-block;
-  white-space: nowrap;
-  animation: ticker-scroll 30s linear infinite;
-  padding-left: 100%;
-}
-
-@keyframes ticker-scroll {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-  100% {
-    transform: translate3d(-100%, 0, 0);
-  }
 }
 
 

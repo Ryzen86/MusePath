@@ -27,10 +27,11 @@ public class GeminiService {
      * any model returning 404 and try the next one automatically.
      */
     private static final String[] MODELS = {
-        "gemini-2.0-flash-lite",  // lightest, fastest, lowest quota cost
-        "gemini-2.0-flash",       // reliable workhorse
-        "gemini-1.5-flash",       // stable long-context fallback
-        "gemini-1.5-pro"          // most capable fallback
+        "gemini-3.6-flash",
+        "gemini-3.5-flash",
+        "gemini-3.5-flash-lite",
+        "gemini-3.1-flash-lite",
+        "gemini-flash-latest"         // most capable fallback
     };
 
     @Value("${GEMINI_API_KEY:}")
@@ -237,7 +238,9 @@ public class GeminiService {
             throw new GeminiAuthException("Auth failed (" + status + "): " + snippet(responseBody));
         }
         if (status == 404) {
-            throw new GeminiModelNotFoundException("Model not found: " + model);
+            throw new GeminiModelNotFoundException(
+            "Model not found: " + model + " -> " + snippet(responseBody)
+        );
         }
         if (status == 429) {
             throw new GeminiQuotaException("Rate limited on " + model + ": " + snippet(responseBody));

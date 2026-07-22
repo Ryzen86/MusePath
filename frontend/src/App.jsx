@@ -72,13 +72,6 @@ export default function App() {
         {/* Fallback */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
-      
-      {/* Global Running Ticker Banner */}
-      <div className="educational-ticker">
-        <div className="ticker-text">
-          ✦ This project is developed by Akhilesh Charde for educational purposes only ✦ This project is developed by Akhilesh Charde for educational purposes only ✦ This project is developed by Akhilesh Charde for educational purposes only ✦ This project is developed by Akhilesh Charde for educational purposes only ✦ This project is developed by Akhilesh Charde for educational purposes only 
-        </div>
-      </div>
     </BrowserRouter>
   )
 }
