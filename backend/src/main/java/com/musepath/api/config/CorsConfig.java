@@ -16,7 +16,9 @@ public class CorsConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
                 .allowedOriginPatterns(
-                    "http://localhost:*",
+                    "http://localhost",             // Docker/nginx on port 80 (no port in Origin)
+                    "http://localhost:*",           // Vite/dev with explicit ports
+                    "http://127.0.0.1",
                     "http://127.0.0.1:*",
                     frontendUrl,                    // production frontend URL from env
                     "https://*.vercel.app",

@@ -11,6 +11,7 @@ frontend/.env.development.local
 # ===========================
 # Backend
 # ===========================
+PROJECT_DOCUMENTATION.md
 backend/target/
 backend/*.jar
 backend/.env
@@ -47,3 +48,8 @@ build/
 *.zip
 *.jar
 !backend/pom.xml
+
+PEOJECT_DOCUMENTATION.md
+PROJECT_EXPLANATION.md
+target/
+backend/target/image.png
